@@ -1,0 +1,45 @@
+@import url('https://rsms.me/inter/inter.css');
+
+body {
+  background: black;
+  font: 100 6vmin 'InterDisplay', sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+strong {
+  font-weight: 700;
+}
+ul {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  position: relative;
+  line-height: 4;
+  transition: color 0.2s;
+}
+a::before {
+  content: '';
+  z-index: -1;
+  background: white;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  transition: width 0.2s;
+}
+a:hover, a:focus {
+  color: black;
+  outline: none;
+}
+a:hover::before, a:focus::before {
+  width: 100%;
+  left: 0;
+}
