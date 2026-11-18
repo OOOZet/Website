@@ -35,11 +35,21 @@ a::before {
   right: 0;
   transition: width 0.2s;
 }
-a:hover, a:focus {
+a:hover, a:focus-visible {
   color: black;
   outline: none;
 }
-a:hover::before, a:focus::before {
+a:hover::before, a:focus-visible::before {
   width: 100%;
   left: 0;
+}
+@supports not selector(:focus-visible) {
+  a:focus {
+    color: black;
+    outline: none;
+  }
+  a:focus::before {
+    width: 100%;
+    left: 0;
+  }
 }
